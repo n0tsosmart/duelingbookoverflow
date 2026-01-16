@@ -46,25 +46,29 @@ DuelingBook Overflow unlocks hidden game mechanics, refines the user interface, 
 
 ## Features
 
-### 🎨 General Settings
+### 🎨 Theme Settings
 
 | Feature | Description |
 |---------|-------------|
 | **Dark Theme** | A sleek, modern dark theme for the entire website. Includes a custom background image option. |
+| **Low Animations** | Speeds up card animations (2x) and disables the flashing dotted-line zone selection animations for better performance. |
+
+### ⚙️ General Settings
+
+| Feature | Description |
+|---------|-------------|
 | **Skip Intro** | Automatically skips the landing page "Enter" animation. |
-| **Auto-Login / Connect** | Instantly enters the main menu by auto-clicking "Duel". |
-| **Bird UI (Widescreen)** | Expands the layout to 1485px for a more spacious view. |
+| **Auto-Login / Connect** | Instantly enters the main menu by auto-clicking the "Duel" button. Respects manual logout to prevent loops. |
 
 ### 🎮 Gameplay Settings
 
 | Feature | Description |
 |---------|-------------|
-| **Extended Mechanics** | Unlocks natively unavailable actions like *Set Spell from Hand*, *Shuffle to Opponent's Deck*, *Excavate / Banish Face-Down*, and *Summon Tokens*. |
-| **Effect Text Highlighter** | Colors card text based on PSCT: 🟢 Conditions, 🔴 Costs, 🔵 Restrictions. |
-| **Low Animations** | Reduces visual clutter by making zone borders static and speeding up card animations (2x). |
-| **Left-Click Action Menu** | Enhanced mouse interaction: Left-Click opens menu, Double-Click for face-down actions. |
-| **Mute Chat Commands** | Executes commands like `/mill` or `/search` silently. |
-| **Chat Card Logging** | Logs detailed card info to the console for tracking. |
+| **Extended Mechanics** | Unlocks natively unavailable actions like *Attack from Pendulum Scale*, *Set Spell from Hand*, *Shuffle to Opponent's Deck*, *Pay Half LP*, *Summon Tokens*, *Excavate*, *Attach from Hand*, *Banish Face-Down*, and more. |
+| **Mute Chat Commands** | Executes chat commands (like `/search` or `/mill`) silently without playing sound effects. |
+| **Left-Click Action Menu** | Enhanced mouse interaction: Left-Click opens the card action menu, Double-Click for face-down actions. |
+| **Chat Card Logging** | Logs detailed card info to the console for tracking, including opponent's hand content when viewed (e.g., via Trap Dustshoot). |
+| **Effect Text Highlighter** | Colors card text based on PSCT (Problem-Solving Card Text): 🟢 Conditions, 🔴 Costs, 🔵 Restrictions. Customizable colors. |
 
 ---
 
@@ -73,7 +77,7 @@ DuelingBook Overflow unlocks hidden game mechanics, refines the user interface, 
 This project acts as a unified fork, combining the best features from different extensions. Special thanks to the following creators:
 
 | Creator | Contribution |
-|---------|--------------|
+|---------|--------------| 
 | **[eyal282](https://github.com/eyal282/chrome-ext-dueling-book-unlock)** | **The Original Creator**. This project is a fork based on his work, serving as the core framework. |
 | **[mykesXD](https://github.com/mykesXD/Duelingbook-Dark-Mode)** | Core CSS for the **Dark Theme**. |
 | **[alexjraymond](https://github.com/alexjraymond/DuelingBookEnhanced)** | Logic implementation for **Skip Intro** and **Auto-Login**. |
