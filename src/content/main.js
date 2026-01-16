@@ -9719,9 +9719,10 @@ function injectFunction(extensionId, unlockCardMechanics, lowAnimations, silentC
 			playSound(Flip);
 		}
 
+
 		if (data.log && !data.log.public_log.startsWith("Set card")) {
 			if (card.data("controller") != player1) {
-				DBO_GenerateImpermColumn(card, points, false);
+				// DBO_GenerateImpermColumn(card, points, false);
 			}
 		}
 
@@ -9758,9 +9759,10 @@ function injectFunction(extensionId, unlockCardMechanics, lowAnimations, silentC
 		}
 
 
+
 		if (data.log && !data.log.public_log.startsWith("Set card") && !data.log.public_log.startsWith("Set a card")) {
 			if (card.data("controller") != player1) {
-				DBO_GenerateImpermColumn(card, points, false);
+				// DBO_GenerateImpermColumn(card, points, false);
 			}
 		}
 		card.data("face_down", true);
