@@ -1,7 +1,7 @@
 {
 	"name": "DuelingBook Overflow",
 	"manifest_version": 3,
-	"version": "1.1",
+	"version": "1.1.1",
 	"description": "Unlock Extended Mechanics, Left-Click Action Menu, Effect Text Highlighting and more for DuelingBook.",
 	"permissions": [
 		"tabs",
