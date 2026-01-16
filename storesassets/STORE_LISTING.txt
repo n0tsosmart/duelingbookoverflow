@@ -1,0 +1,16 @@
+Unlock Extended Mechanics, Left-Click Action Menu, Effect Text Highlighting, Dark Theme and more for DuelingBook.
+
+DuelingBook Overflow enhances your Duelingbook.com experience with powerful features that unlock hidden mechanics, improve the interface, and automate tedious tasks.
+
+Features:
+- Extended Mechanics: Unlock 30+ card actions not natively available, including attack from Pendulum Scale, summon tokens, excavate cards, banish face-down, and more
+- Dark Theme: Modern dark mode with optional custom background images
+- Effect Text Highlighter: Color-code card text by PSCT type (Conditions, Costs, Restrictions)
+- Left-Click Action Menu: Open card menus with left-click, double-click for face-down actions
+- Chat Commands: Quick actions like /search, /send, /ban, /excavate and more
+- Skip Intro and Auto-Connect: Jump straight into the game
+- Low Animations: Speed up animations for better performance
+- Mute Chat Commands: Execute commands silently
+- Card Logging: Track opponent's hand when viewed
+
+All features are fully configurable through the extension popup.
