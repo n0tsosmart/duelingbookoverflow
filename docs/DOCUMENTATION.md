@@ -21,15 +21,15 @@
 | Feature | Storage Key | Default | Description |
 |---------|-------------|---------|-------------|
 | **Skip Intro** | `skipIntro` | `true` | Automatically clicks the `#skip_intro_btn` button to skip the landing page "Enter" animation. Runs via a 40ms interval in `main.js`. |
-| **Auto-Connect** | `autoConnect` | `true` | Automatically clicks the `#duel_btn` button to enter the main menu. Respects manual logout/exit to prevent auto-connect loops. |
+| **Auto-Connect** | `autoConnect` | `true` | Automatically clicks the `#duel_btn` button to enter the main menu. |
 
 ### Gameplay Settings
 
 | Feature | Storage Key | Default | Description |
 |---------|-------------|---------|-------------|
 | **Extended Mechanics** | `unlockCardMechanics` | `true` | Unlocks natively unavailable card actions.
-| **Mute Chat Commands** | `silentCommands` | `true` | Executes chat commands (e.g., `/mill`, `/search`) silently without playing sound effects. |
-| **Left-Click Action Menu** | `birdUI` | `true` | Enhanced card interaction mode: Left-Click opens the card action menu, Double-Click for face-down actions. Also expands the game layout to 1485px width for better visibility. |
+| **Mute Chat Commands** | `silentCommands` | `true` | Executes chat commands (e.g., `/mill`, `/search`) silently. |
+| **Left-Click Action Menu** | `birdUI` | `true` | Enhanced card interaction mode: Left-Click opens the card action menu, Double-Click for face-down actions. |
 | **Low Animations** | `lowAnimations` | `false` | Speeds up TweenMax animations (2x) and removes the flashing dotted-line zone selection animations. Overrides `startChooseMonsterZones` and `startChooseSpellZones` functions. |
 | **Chat Card Logging** | `cardLogging` | `true` | Logs detailed card information to the browser console, including opponent's hand content when viewed (e.g., via Trap Dustshoot). |
 | **Effect Text Highlighter** | `psctBold` | `true` | Highlights Problem-Solving Card Text (PSCT) with customizable colors for Conditions, Costs, and Restrictions. |
