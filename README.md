@@ -20,6 +20,10 @@ DuelingBook Overflow unlocks hidden game mechanics, refines the user interface, 
 
 > **The goal of this project is to unify all the features I personally use from various extensions into a single, cohesive package.**
 
+<p align="center">
+  <img src="storesassets/screenshot_1.jpg" alt="DuelingBook Overflow Screenshot" width="800">
+</p>
+
 ## Installation
 
 > [!NOTE]
