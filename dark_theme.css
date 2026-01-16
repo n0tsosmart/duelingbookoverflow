@@ -1,0 +1,626 @@
+@import url(https://fonts.googleapis.com/css2?family=Calibri:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,900&display=swap);
+
+
+/*===== CHANGE AVATAR AND BACKGROUND by replacing links below with your image or gif links =====*/
+
+
+/*Control dimming of the background image*/
+
+:root {
+    --bg-dim: 70%;
+}
+
+/*Background image*/
+
+body {
+    /*background: linear-gradient( rgba(0, 0, 0, var(--bg-dim)),rgba(0, 0, 0, var(--bg-dim))), url(https://wallpapercave.com/wp/wp7323512.jpg);*/
+    background-size: cover;
+}
+
+/*===== CHANGE FONT by adding @import of your font and replace " Roboto, sans-serif " below =====*/
+
+:root {
+    --font-family: 'Roboto', sans-serif;
+}
+
+/*===== CHANGE COLOR by replacing the HEX values(#000000) =====*/
+
+:root {
+    --bg-color: linear-gradient(0deg, #1c1c21 0%, #17171b 100%);
+}
+
+:root {
+    --text-color: #d6d6d6;
+}
+
+:root {
+    --border-color: #3a3a3d;
+}
+
+:root {
+    --select-color: #4486c4;
+}
+
+:root {
+    --lp-color-p1: linear-gradient(90deg, #ce404f 0%, #cb4141 100%);
+}
+
+:root {
+    --lp-color-p2: linear-gradient(90deg, #3c49af 0%, #293594 100%);
+}
+
+
+
+/*----------- SECTION: DARK MODE ---------*/
+
+
+
+
+/*Player colors were too bright on dark*/
+
+div.os-content.selectable.os-textarea b font {
+    font-weight: 600;
+    filter: contrast(70%)hue-rotate(348deg);
+}
+
+/*Lifepoint and player colors*/
+
+div#lifepoints1.lifepoints div.life_bar {
+    background: var(--lp-color-p1);
+}
+
+div#lifepoints2.lifepoints div.life_bar {
+    background: var(--lp-color-p2);
+}
+
+div.life_border {
+    border-color: #303030;
+}
+
+div.black_bar {
+    background: linear-gradient(90deg, #040404 0%, #161616 100%);
+    ;
+}
+
+div#avatar1.duel_avatar {
+    background: var(--lp-color-p1);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+div#avatar2.duel_avatar {
+    background: var(--lp-color-p2);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+div.gone {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+/*Phase buttons*/
+
+div#field_content img {
+    filter: contrast(88%) hue-rotate(345deg);
+}
+
+/*Player current status*/
+
+#status1 .status_txt,
+#status2 .status_txt {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+/*Links*/
+
+div a u {
+    color: #476fff;
+}
+
+/*Selection color*/
+
+::selection {
+    color: white;
+    background: var(--select-color);
+}
+
+/* Card preview text */
+
+#preview_txt {
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: solid 1px var(--border-color);
+}
+
+div.os-scrollbar-handle {
+    background-color: gainsboro;
+}
+
+/*Watchers section*/
+
+#watchers {
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: solid 1px var(--border-color);
+}
+
+#watchers>div {
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+/*Buttons*/
+
+div.button.proxy.unselectable,
+div.button,
+button,
+div.menu_btn,
+div.ok_btn,
+div.cancel_btn,
+div.yes_btn,
+div.no_btn {
+    background: none;
+    color: var(--text-color) !important;
+    background: var(--bg-color);
+    /*Delete line below for round edges*/
+    border-radius: 0px;
+}
+
+/*Inputs*/
+
+input[type] {
+    background: none;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: solid 1px var(--border-color);
+}
+
+div.textinput.proxy {
+    background: none;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+/*Drop down selectors*/
+
+div.combobox.proxy.unselectable {
+    background: none;
+    color: var(--text-color);
+    background: var(--bg-color);
+    /*Delete line below for round edges*/
+    border-radius: 0px;
+}
+
+select {
+    background: none;
+    color: var(--text-color);
+    background: #1c1c21;
+}
+
+/*Chatting section*/
+
+.cout_txt.textarea.scrollpane.selectable>div[tabindex] {
+    background: none;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: solid 0px var(--border-color);
+    padding-left: 6px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+div div b {
+    color: #90c982;
+}
+
+/*Card options*/
+
+span.card_menu_txt {
+    background: none;
+    opacity: 85%;
+    color: #eeeeee;
+    background: #1c1c21;
+    border: solid 1px var(--border-color);
+}
+
+span.card_menu_txt:hover {
+    background: none;
+    color: #1c1c21;
+    background-color: var(--select-color);
+    border: solid 1px var(--border-color);
+}
+
+/*Logs and Watchers section*/
+
+div.chat_background {
+    background: none;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+div div font {
+    filter: contrast(70%)hue-rotate(348deg);
+}
+
+div.log_txt.textarea.scrollpane.selectable.os-host.os-theme-dark.os-host-resize-disabled.os-host-transition {
+    background: none;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+}
+
+/*Login Screen*/
+
+div#login div.background {
+    background: var(--bg-color);
+}
+
+div#login {
+    color: var(--text-color);
+}
+
+div.textarea.scrollpane.selectable.os-host.os-theme-dark.os-host-resize-disabled.os-host-transition.os-host-overflow.os-host-overflow-y {
+    background: none;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+}
+
+#logged_in div.background {
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+}
+
+#logged_in_as_lbl {
+    color: var(--text-color);
+}
+
+#logged_in>span.username_txt {
+    color: var(--text-color);
+}
+
+/*Main Menu*/
+
+div.menu_btn img {
+    filter: saturate(30%) hue-rotate(23deg);
+}
+
+textarea.status_txt {
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+/*Deck Constuctor*/
+
+img.deck_constructor {
+    filter: hue-rotate(300deg) saturate(50%);
+    opacity: 90%;
+}
+
+#search img {
+    filter: saturate(13%) invert(100%) hue-rotate(325deg) brightness(350%) contrast(85%);
+}
+
+/*Rankings*/
+
+.ranking_item.unselectable {
+    background: none;
+    color: var(--text-color);
+    background: #1c1c21;
+}
+
+#rankings>div.content.scrollpane.os-host.os-theme-dark.os-host-resize-disabled.os-host-transition.os-host-overflow.os-host-overflow-x.os-host-overflow-y>div.os-padding>div>div {
+    background-color: black;
+}
+
+/*Duel room*/
+
+#formats_inner {
+    filter: contrast(80%) saturate(50%);
+}
+
+/*Profile Viewer*/
+
+div.profile_txt.textarea.aliased.scrollpane.selectable {
+    background: none;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+#profile_content>div.os-padding>div>div>div.textinput.proxy {
+    color: var(--text-color);
+}
+
+/*My Profile*/
+
+textarea.profile_txt {
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+/*Online Users*/
+
+div.cell.cell1 {
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+div#action_list div.cell.cell1 {
+    color: var(--text-color);
+    background: var(--bg-color);
+    margin: -2px;
+    border: solid 1px var(--border-color);
+}
+
+div.os-content.os-list div.cell.cell1.isAdmin.admin1 {
+    color: lightgreen;
+    background: var(--bg-color);
+}
+
+div.os-content.os-list div.cell.cell1.following {
+    color: lightskyblue;
+    background: var(--bg-color);
+}
+
+
+
+/*----------- SECTION: FONTS ---------*/
+
+
+
+/*FONT Main menu*/
+
+div.menu_btn {
+    font-family: var(--font-family);
+    font-weight: 700;
+}
+
+div.delete_btn {
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+span.username_txt.selectable.size24 {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+span.not_link,
+span.link {
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+div.reply_btn,
+div.date_txt.arial_rounded18 {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+div.status_txt.size18.cyan.selectable {
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+/* FONT Tournaments*/
+
+div.desc_txt.size18.cyan.selectable {
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+span.name_txt.selectable.size24 {
+    font-family: var(--font-family);
+    font-weight: 700;
+}
+
+/*FONT Name and LP*/
+
+span.username_txt.selectable {
+    font-family: var(--font-family);
+    font-weight: 600;
+    filter: drop-shadow(0px 1px 0px black);
+    padding-top: 1.5px;
+}
+
+span.life_txt {
+    font-family: var(--font-family);
+    font-weight: 600;
+    filter: drop-shadow(0px 1px 0px black);
+}
+
+/*FONT Card option pop up*/
+
+span.card_menu_txt {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+/*FONT Field section*/
+
+span.gray_txt.arial_rounded25,
+span.white_txt.arial_rounded25 {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+span.end_turn_txt.arial_rounded20 {
+    padding-left: 5px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+span.start_turn_txt.arial_rounded20 {
+    padding-left: 6px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+div div b {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+span.arial_rounded20 {
+    padding-top: 1px;
+    padding-left: 2px;
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+#field {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+/* FONT Like count*/
+
+div.likes {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+/*FONT Profile Viewer*/
+
+div.stats span,
+span.views_lbl,
+span.views_txt.bisque,
+span.unfollow_btn,
+div.delete_btn.arial_rounded25,
+div.os-viewport.os-viewport-native-scrollbars-invisible {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+div.os-content.selectable.os-textarea {
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+span.profile_lbl.kristenitc,
+span.comments_lbl.kristenitc,
+span.post_a_comment_lbl.kristenitc,
+span.friends_lbl.kristenitc {
+    font-family: var(--font-family);
+    font-weight: 700;
+}
+
+#profile_content>div.os-padding>div>div>div.textinput.proxy {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+#profile_username_txt {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+div.comment_txt.arial_rounded18.selectable.cyan {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+/*FONT Browse Users*/
+
+span.username_txt.bisque {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+div.desc_txt {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+/*FONT Friend Requests*/
+
+div.accept_btn.arial_rounded25 {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+div.deny_btn.arial_rounded25 {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+div.message_btn.arial_rounded25 {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+span.accept_all_btn.arial_rounded25 {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+#duel_records span {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+/*FONT Zone card counter*/
+
+#cid1_txt,
+#cig1_txt,
+#cib1_txt,
+#cie1_txt,
+#cid2_txt,
+#cig2_txt,
+#cib2_txt,
+#cie2_txt,
+#hm1_txt,
+#hm2_txt,
+#hm3_txt,
+#hm4_txt,
+#hm5_txt,
+#om1_txt,
+#om2_txt,
+#om3_txt,
+#om4_txt,
+#om5_txt,
+#link_right_txt,
+#hl_txt,
+#ol_txt {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+/*FONT Post Status*/
+
+span.title_lbl.kristenitc,
+#post_status_btn {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+/*FONT Pop up message*/
+
+#msg,
+div.ok_btn {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+#confirm {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+span.connection_status {
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+#welcome_buttons span {
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+#countdown2 {
+    font-family: var(--font-family);
+    font-weight: 500;
+}

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Card Mechanics Settings</title>
+	<style>
+		:root {
+			--color-1: #010100;
+			--color-2: #1E1413;
+			--color-3: #785448;
+			--color-4: #F90;
+			--color-5: #FEC106;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+			padding: 20px;
+			width: 320px;
+			color: #E8E8E8;
+			background-color: #2A2220;
+		}
+
+		.container {
+			padding: 0;
+		}
+
+		.header {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 12px;
+			margin-bottom: 24px;
+			padding-bottom: 16px;
+			border-bottom: 2px solid var(--color-3);
+		}
+
+		.logo {
+			width: 32px;
+			height: 32px;
+			object-fit: contain;
+		}
+
+		h1 {
+			font-size: 20px;
+			font-weight: 700;
+			color: var(--color-5);
+			letter-spacing: 0.5px;
+		}
+
+		.section {
+			margin-bottom: 20px;
+			padding-bottom: 20px;
+		}
+
+		.section:not(:last-child) {
+			border-bottom: 1px solid var(--color-3);
+		}
+
+		.section:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+
+		.section-title {
+			font-size: 14px;
+			font-weight: 600;
+			color: var(--color-4);
+			margin-bottom: 12px;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+
+		.setting-item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px 0;
+		}
+
+		.setting-label {
+			font-size: 14px;
+			color: #D4D4D4;
+			font-weight: 500;
+		}
+
+		/* Modern Toggle Switch */
+		.switch {
+			position: relative;
+			display: inline-block;
+			width: 48px;
+			height: 26px;
+		}
+
+		.switch input {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		.slider {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #4A4240;
+			transition: 0.3s;
+			border-radius: 26px;
+		}
+
+		.slider:before {
+			position: absolute;
+			content: "";
+			height: 20px;
+			width: 20px;
+			left: 3px;
+			bottom: 3px;
+			background-color: #E8E8E8;
+			transition: 0.3s;
+			border-radius: 50%;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+		}
+
+		input:checked+.slider {
+			background-color: var(--color-4);
+		}
+
+		input:focus+.slider {
+			box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.3);
+		}
+
+		input:checked+.slider:before {
+			transform: translateX(22px);
+		}
+
+		/* Color Picker Styling */
+		.color-setting {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 8px 0;
+		}
+
+		.color-label {
+			font-size: 13px;
+			color: #C4C4C4;
+			font-weight: 500;
+		}
+
+		.color-input-wrapper {
+			position: relative;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		input[type="color"] {
+			width: 40px;
+			height: 32px;
+			border: 2px solid var(--color-3);
+			border-radius: 8px;
+			cursor: pointer;
+			transition: all 0.2s;
+			background-color: var(--color-2);
+		}
+
+		input[type="color"]:hover {
+			border-color: var(--color-4);
+			transform: scale(1.05);
+		}
+
+		input[type="color"]::-webkit-color-swatch-wrapper {
+			padding: 0;
+		}
+
+		input[type="color"]::-webkit-color-swatch {
+			border: none;
+			border-radius: 6px;
+		}
+
+		.subsection {
+			background: var(--color-2);
+			border-radius: 8px;
+			padding: 12px;
+			margin-top: 12px;
+			border: 1px solid var(--color-3);
+		}
+
+		.subsection-title {
+			font-size: 13px;
+			font-weight: 600;
+			color: var(--color-5);
+			margin-bottom: 10px;
+		}
+
+		/* Tooltip Styles */
+		.info-icon {
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: var(--color-3);
+			color: white;
+			font-size: 11px;
+			font-style: italic;
+			font-family: serif;
+			margin-left: 6px;
+			cursor: help;
+			position: relative;
+		}
+
+		.info-icon:hover {
+			background-color: var(--color-4);
+		}
+
+		.info-icon:hover::after {
+			content: attr(data-tooltip);
+			position: absolute;
+			bottom: 150%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 200px;
+			padding: 10px;
+			background-color: var(--color-1);
+			color: #FFFFFF;
+			text-align: center;
+			border-radius: 6px;
+			font-size: 13px;
+			font-weight: 500;
+			font-style: normal;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+			z-index: 100;
+			white-space: normal;
+			line-height: 1.5;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+			border: 1px solid var(--color-3);
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.info-icon:hover::before {
+			content: "";
+			position: absolute;
+			bottom: 120%;
+			left: 50%;
+			transform: translateX(-50%);
+			border-width: 6px;
+			border-style: solid;
+			border-color: var(--color-1) transparent transparent transparent;
+			z-index: 100;
+		}
+
+		/* HTML Tooltip Box (for interactive content) */
+		.tooltip-box {
+			display: none;
+			position: absolute;
+			bottom: 150%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 200px;
+			padding: 10px;
+			background-color: var(--color-1);
+			color: #FFFFFF;
+			text-align: center;
+			border-radius: 6px;
+			font-size: 13px;
+			font-weight: 500;
+			font-style: normal;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+			z-index: 101;
+			white-space: normal;
+			line-height: 1.5;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+			border: 1px solid var(--color-3);
+			cursor: default;
+		}
+
+		/* Arrow for HTML Tooltip */
+		.tooltip-box::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			/* Bottom of box */
+			left: 50%;
+			transform: translateX(-50%);
+			border-width: 6px;
+			border-style: solid;
+			border-color: var(--color-1) transparent transparent transparent;
+		}
+
+		.info-icon:hover .tooltip-box {
+			display: block;
+		}
+
+		/* Links in tooltips */
+		.tooltip-box a {
+			color: var(--color-5);
+			text-decoration: none;
+			font-weight: 700;
+		}
+
+		.tooltip-box a:hover {
+			text-decoration: underline;
+		}
+
+		/* Expandable Settings */
+		.expand-btn {
+			background: none;
+			border: none;
+			color: var(--color-4);
+			cursor: pointer;
+			padding: 4px;
+			margin-right: 8px;
+			transition: transform 0.3s ease;
+		}
+
+		.expand-btn.expanded {
+			transform: rotate(90deg);
+		}
+
+		.icon-btn {
+			background: none;
+			border: none;
+			color: #B0B0B0;
+			cursor: pointer;
+			font-size: 16px;
+			padding: 4px;
+			border-radius: 4px;
+			transition: all 0.2s;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.icon-btn:hover {
+			background-color: rgba(255, 255, 255, 0.1);
+			color: var(--color-4);
+		}
+
+		.input-group {
+			display: flex;
+			gap: 8px;
+			align-items: center;
+			width: 100%;
+		}
+
+		.expand-icon {
+			width: 12px;
+			height: 12px;
+			fill: currentColor;
+		}
+
+		.settings-details {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease-out;
+			background-color: rgba(0, 0, 0, 0.2);
+			border-radius: 4px;
+			margin-top: 4px;
+		}
+
+		.settings-details.open {
+			max-height: 300px;
+			/* Arbitrary large height */
+			padding: 12px;
+			margin-bottom: 12px;
+			border: 1px solid var(--color-3);
+		}
+
+		.url-input {
+			width: 100%;
+			padding: 8px;
+			background: var(--color-2);
+			border: 1px solid var(--color-3);
+			color: #E8E8E8;
+			border-radius: 4px;
+			font-family: inherit;
+			font-size: 13px;
+			box-sizing: border-box;
+			/* Important so padding doesn't overflow */
+		}
+
+		.url-input:focus {
+			border-color: var(--color-4);
+			outline: none;
+		}
+
+		/* Overriding setting-item layout for expandable rows */
+		.setting-item-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+		}
+
+		.setting-label-Wrapper {
+			display: flex;
+			align-items: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<img src="icon.png" alt="DuelingBook Overflow Logo" class="logo">
+			<h1>DuelingBook Overflow</h1>
+		</div>
+
+		<!-- Theme Settings -->
+		<div class="section">
+			<div class="section-title">Theme Settings</div>
+
+			<div class="setting-group">
+				<div class="setting-item">
+					<div class="setting-label-Wrapper">
+						<button class="expand-btn" id="btn-expand-dark" type="button">
+							<svg class="expand-icon" viewBox="0 0 24 24">
+								<path d="M8 5v14l11-7z" />
+							</svg>
+						</button>
+						<span class="setting-label">Dark Theme <span class="info-icon">i<span
+									class="tooltip-box">Applies a
+									sleek dark theme to Duelingbook (Provided by <a
+										href="https://github.com/mykesXD/Duelingbook-Dark-Mode"
+										target="_blank">mykesXD</a>).</span></span></span>
+					</div>
+					<label class="switch">
+						<input type="checkbox" id="darkTheme">
+						<span class="slider"></span>
+					</label>
+				</div>
+				<div id="darkThemeDetails" class="settings-details">
+					<div class="input-group">
+						<input type="text" id="darkThemeBg" class="url-input" placeholder="Custom Background Image URL">
+						<button id="clearDarkThemeBg" class="icon-btn" title="Clear URL">🗑️</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="setting-item">
+				<span class="setting-label">Low Animations (Less Lag) <span class="info-icon"
+						data-tooltip="Speeds up card animations and disables zone selection animations for better performance.">i</span></span>
+				<label class="switch">
+					<input type="checkbox" id="lowAnimations">
+					<span class="slider"></span>
+				</label>
+			</div>
+		</div>
+
+		<!-- General Settings -->
+		<div class="section">
+			<div class="section-title">General Settings</div>
+
+			<div class="setting-item">
+				<span class="setting-label">Skip Intro <span class="info-icon">i<span class="tooltip-box">Automatically
+							skips
+							the Duelingbook intro animation (Provided by <a
+								href="https://github.com/alexjraymond/DuelingBookEnhanced"
+								target="_blank">alexjraymond</a>).</span></span></span>
+				<label class="switch">
+					<input type="checkbox" id="skipIntro">
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="setting-item">
+				<span class="setting-label">Auto-Login / Connect <span class="info-icon">i<span
+							class="tooltip-box">Automatically clicks the "Duel" button to enter the game (Provided by <a
+								href="https://github.com/alexjraymond/DuelingBookEnhanced"
+								target="_blank">alexjraymond</a>).</span></span></span>
+				<label class="switch">
+					<input type="checkbox" id="autoConnect">
+					<span class="slider"></span>
+				</label>
+			</div>
+		</div>
+
+		<!-- Gameplay Settings -->
+		<div class="section">
+			<div class="section-title">Gameplay Settings</div>
+
+			<div class="setting-item">
+				<span class="setting-label">Extended Mechanics <span class="info-icon"
+						data-tooltip="Unlocks unavailable mechanics: Attack from Pendulum Scale, Set Spell from Hand, Shuffle to Opponent's Deck, Pay Half LP, Summon Tokens, Excavate, Attach from Hand, and more.">i</span></span>
+				<label class="switch">
+					<input type="checkbox" id="unlockCardMechanics">
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="setting-item">
+				<span class="setting-label">Mute Chat Commands <span class="info-icon"
+						data-tooltip="Executes chat commands (like /search or /mill) silently without playing sound effects.">i</span></span>
+				<label class="switch">
+					<input type="checkbox" id="silentCommands">
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="setting-item">
+				<span class="setting-label">Left-Click Action Menu <span class="info-icon"
+						data-tooltip="Enables refined interactions: Left-Click to open menu, Double-Click for face-down actions, or Click then Click-Zone to move cards manually.">i</span></span>
+				<label class="switch">
+					<input type="checkbox" id="birdUI">
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="setting-item">
+				<span class="setting-label">Chat Card Logging <span class="info-icon"
+						data-tooltip="Logs detailed card information to the console, including opponent's hand content when viewed (e.g., via Trap Dustshoot).">i</span></span>
+				<label class="switch">
+					<input type="checkbox" id="cardLogging">
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="setting-group">
+				<div class="setting-item">
+					<div class="setting-label-Wrapper">
+						<button class="expand-btn" id="btn-expand-psct" type="button">
+							<svg class="expand-icon" viewBox="0 0 24 24">
+								<path d="M8 5v14l11-7z" />
+							</svg>
+						</button>
+						<span class="setting-label">Effect Text Highlighter <span class="info-icon"
+								data-tooltip="Highlights Problem-Solving Card Text (PSCT): Conditions (Green), Costs (Red), and Restrictions (Blue) for easier reading.">i</span></span>
+					</div>
+					<label class="switch">
+						<input type="checkbox" id="psctBold">
+						<span class="slider"></span>
+					</label>
+				</div>
+				<div id="psctDetails" class="settings-details">
+					<div class="subsection-title">Colors</div>
+
+					<div class="color-setting">
+						<span class="color-label">Condition Color <span class="info-icon"
+								data-tooltip="Color for activation conditions (e.g. 'If this card is summoned:').">i</span></span>
+						<div class="color-input-wrapper">
+							<input type="color" id="psctConditionColor" value="#008000">
+						</div>
+					</div>
+
+					<div class="color-setting">
+						<span class="color-label">Cost Color <span class="info-icon"
+								data-tooltip="Color for activation costs (e.g. 'Discard 1 card;').">i</span></span>
+						<div class="color-input-wrapper">
+							<input type="color" id="psctCostColor" value="#ff0000">
+						</div>
+					</div>
+
+					<div class="color-setting">
+						<span class="color-label">Restriction Color <span class="info-icon"
+								data-tooltip="Color for effect restrictions (e.g. 'You cannot Special Summon...').">i</span></span>
+						<div class="color-input-wrapper">
+							<input type="color" id="psctLockColor" value="#0000ff">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="onextensionpressed.js"></script>
+</body>
+
+</html>
