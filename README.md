@@ -28,17 +28,31 @@ DuelingBook Overflow unlocks hidden game mechanics, refines the user interface, 
 
 ## Installation
 
+### Install from Store (Recommended)
+
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/duelingbook-overflow/gebkpgkiloaopnhmicaboenbhpkejdcl"><img src="https://img.shields.io/badge/Chrome-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Web Store"></a>
+  <a href="https://addons.mozilla.org/firefox/addon/duelingbook-overflow/"><img src="https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Firefox Add-ons"></a>
+</p>
+
+> [!NOTE]
+> Store versions may be delayed by a few days due to the review and publishing process. For the latest features, install manually from source.
+
+---
+
+### Manual Installation (Latest)
+
 > [!NOTE]
 > This repository contains two manifest files: `chrome_manifest.json` and `firefox_manifest.json`. Before installing, rename the one corresponding to your browser to `manifest.json`.
 
-### Chrome / Edge / Brave
+#### Chrome / Edge / Brave
 1. Download or clone this repository.
 2. Rename `chrome_manifest.json` to `manifest.json`.
 3. Go to `chrome://extensions` (or the equivalent for your browser).
 4. Enable **Developer Mode**.
 5. Click **Load unpacked** and select the extension folder.
 
-### Firefox
+#### Firefox
 1. Download or clone this repository.
 2. Rename `firefox_manifest.json` to `manifest.json`.
 3. Go to `about:debugging#/runtime/this-firefox`.
