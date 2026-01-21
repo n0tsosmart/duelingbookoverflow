@@ -520,7 +520,7 @@ function injectFunction(extensionId, unlockCardMechanics, lowAnimations, silentC
 		card.data("cardfront").reinitialize(data.card);
 		card.data("face_down", false);
 		$('#field').append(card);
-		TweenMax.set(card, { "z": card.getGraveZ() })
+
 		card.data("owner").grave_arr.unshift(card);
 		console.timeEnd("DBO_Test2");
 		console.time("DBO_Test3");
@@ -551,7 +551,7 @@ function injectFunction(extensionId, unlockCardMechanics, lowAnimations, silentC
 		updateController(card.data("owner"), card);
 		card.data("cardfront").reinitialize(data.card);
 		$('#field').append(card);
-		TweenMax.set(card, { "z": card.getGraveZ() })
+
 		card.data("owner").grave_arr.unshift(card);
 		TweenMax.to(card, easeSecondsBanish, {
 			left: card.data("owner").graveX, top: card.data("owner").graveY, rotation: card.data("owner").rot, rotationY: ABOUT_ZERO, ease: Linear.easeNone, onComplete: function () {
@@ -2942,10 +2942,11 @@ function injectFunction(extensionId, unlockCardMechanics, lowAnimations, silentC
 
 		let stateColors = []
 
+
 		if (DBO_psctBold) {
-			stateColors.push(`</DBO></b>`)
-			stateColors.push(`<b><DBO style="color:${DBO_psctCostColor};">`)
-			stateColors.push(`<b><DBO style="color:${DBO_psctConditionColor};">`)
+			stateColors.push(`</DBO>`)
+			stateColors.push(`<DBO style="color:${DBO_psctCostColor};">`)
+			stateColors.push(`<DBO style="color:${DBO_psctConditionColor};">`)
 		}
 		else {
 			stateColors.push(`</DBO>`)
@@ -3081,14 +3082,8 @@ function injectFunction(extensionId, unlockCardMechanics, lowAnimations, silentC
 			let position = -1;
 
 			while ((position = text.indexOf(trueEffects[abc], position + 1)) != -1) {
-				if (DBO_psctBold) {
-					positionsFormatting.push({ format: `<b><DBO style="color:${DBO_psctLockColor};">`, position: position });
-					positionsFormatting.push({ format: `</DBO></b>`, position: position + trueEffects[abc].length });
-				}
-				else {
-					positionsFormatting.push({ format: `<DBO style="color:${DBO_psctLockColor};">`, position: position });
-					positionsFormatting.push({ format: `</DBO>`, position: position + trueEffects[abc].length });
-				}
+				positionsFormatting.push({ format: `<DBO style="color:${DBO_psctLockColor};">`, position: position });
+				positionsFormatting.push({ format: `</DBO>`, position: position + trueEffects[abc].length });
 			}
 		}
 
@@ -9751,7 +9746,7 @@ function injectFunction(extensionId, unlockCardMechanics, lowAnimations, silentC
 			TweenMax.to(player.grave_arr[i], 0, { rotationY: ABOUT_ZERO });
 			player.grave_arr[i].css("left", player.graveX + gX);
 			player.grave_arr[i].css("top", player.graveY + gY);
-			TweenMax.to(player.grave_arr[i], 0, { scale: 0.1485, rotation: player.rot, alpha: 1, z: player.grave_arr.length - i });
+			TweenMax.to(player.grave_arr[i], 0, { scale: 0.1485, rotation: player.rot, alpha: 1 });
 			gX += player.gX;
 			gY += player.gY;
 			$('#field').append(player.grave_arr[i]);
@@ -9779,7 +9774,7 @@ function injectFunction(extensionId, unlockCardMechanics, lowAnimations, silentC
 			}
 			player.banished_arr[i].css("left", player.banishedX + bX);
 			player.banished_arr[i].css("top", player.banishedY);
-			TweenMax.to(player.banished_arr[i], 0, { scale: 0.1485, rotation: player.rot, z: player.banished_arr.length - i, alpha: 1 });
+			TweenMax.to(player.banished_arr[i], 0, { scale: 0.1485, rotation: player.rot, alpha: 1 });
 			bX += player.bX;
 			$('#field').append(player.banished_arr[i]);
 		}

@@ -5,7 +5,7 @@
 <h1 align="center">DuelingBook Overflow</h1>
 
 <p align="center">
-  <strong>Version 1.1.3</strong> · A feature-packed browser extension for Duelingbook.com
+  <strong>Version 1.1.4</strong> · A feature-packed browser extension for Duelingbook.com
 </p>
 
 <p align="center">

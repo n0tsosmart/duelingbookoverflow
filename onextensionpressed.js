@@ -224,16 +224,21 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (checkbox.id == 'darkTheme') {
 		chrome.storage.sync.get(['darkTheme'], function (result) {
 
-			if (result && result.darkTheme == false)
-				checkbox.checked = false;
+			if (result && result.darkTheme == true)
+				checkbox.checked = true;
 
 			else
-				checkbox.checked = true;
+				checkbox.checked = false;
 
 		});
 
 		checkbox.addEventListener('change', function () {
 			chrome.storage.sync.set({ darkTheme: checkbox.checked }, function () { });
+			// Show refresh notice when theme is toggled
+			let refreshNotice = document.getElementById('refreshNotice');
+			if (refreshNotice) {
+				refreshNotice.style.display = 'flex';
+			}
 		});
 	}
 });
@@ -455,8 +460,22 @@ function setupExpandable(btnId, detailsId) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-	setupExpandable('btn-expand-dark', 'darkThemeDetails');
+	// setupExpandable('btn-expand-dark', 'darkThemeDetails'); // Removed
 	setupExpandable('btn-expand-psct', 'psctDetails');
+	setupExpandable('btn-expand-bg', 'bgDetails');
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+	let refreshBtn = document.getElementById('refreshBtn');
+	if (refreshBtn) {
+		refreshBtn.addEventListener('click', function () {
+			chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+				if (tabs[0]) {
+					chrome.tabs.reload(tabs[0].id);
+				}
+			});
+		});
+	}
 });
 
 /**

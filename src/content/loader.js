@@ -47,7 +47,7 @@ function initializeSettings() {
                 result.psctLockColor || "#0000ff",
                 result.psctEffectColor || "#000000"
             ],
-            darkTheme: result.darkTheme !== false,
+            darkTheme: result.darkTheme === true,
             darkThemeBg: result.darkThemeBg || "",
             skipIntro: result.skipIntro !== false,
             autoConnect: result.autoConnect !== false
@@ -108,7 +108,7 @@ function handleDarkTheme(enabled, bgUrl) {
 
     // 2. Handle Custom Background
     let bgStyle = document.getElementById(bgId);
-    if (enabled && bgUrl) {
+    if (bgUrl) {
         if (!bgStyle) {
             bgStyle = document.createElement('style');
             bgStyle.id = bgId;

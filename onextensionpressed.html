@@ -424,26 +424,39 @@
 
 			<div class="setting-group">
 				<div class="setting-item">
-					<div class="setting-label-Wrapper">
-						<button class="expand-btn" id="btn-expand-dark" type="button">
-							<svg class="expand-icon" viewBox="0 0 24 24">
-								<path d="M8 5v14l11-7z" />
-							</svg>
-						</button>
-						<span class="setting-label">Dark Theme <span class="info-icon">i<span
-									class="tooltip-box">Applies a
-									sleek dark theme to Duelingbook (Provided by <a
-										href="https://github.com/mykesXD/Duelingbook-Dark-Mode"
-										target="_blank">mykesXD</a>).</span></span></span>
-					</div>
+					<span class="setting-label">Dark Theme <span class="info-icon">i<span class="tooltip-box">Applies a
+								sleek dark theme to Duelingbook (Provided by <a
+									href="https://github.com/mykesXD/Duelingbook-Dark-Mode"
+									target="_blank">mykesXD</a>).</span></span></span>
 					<label class="switch">
 						<input type="checkbox" id="darkTheme">
 						<span class="slider"></span>
 					</label>
 				</div>
-				<div id="darkThemeDetails" class="settings-details">
+			</div>
+
+			<div id="refreshNotice"
+				style="margin-top: 10px; display: none; flex-direction: column; align-items: center; gap: 6px;">
+				<span style="font-size: 11px; color: #aaa; font-style: italic;">Theme changed. <button id="refreshBtn"
+						style="background: none; border: none; color: var(--color-4); cursor: pointer; text-decoration: underline; font-size: 11px; font-style: italic; padding: 0;">Refresh
+						to apply ⟳</button></span>
+			</div>
+
+			<div class="setting-group" style="margin-top: 12px;">
+				<div class="setting-item">
+					<div class="setting-label-Wrapper">
+						<button class="expand-btn" id="btn-expand-bg" type="button">
+							<svg class="expand-icon" viewBox="0 0 24 24">
+								<path d="M8 5v14l11-7z" />
+							</svg>
+						</button>
+						<span class="setting-label">Custom Background <span class="info-icon"
+								data-tooltip="Set a custom background image URL. Works independently of Dark Theme.">i</span></span>
+					</div>
+				</div>
+				<div id="bgDetails" class="settings-details">
 					<div class="input-group">
-						<input type="text" id="darkThemeBg" class="url-input" placeholder="Custom Background Image URL">
+						<input type="text" id="darkThemeBg" class="url-input" placeholder="Image URL">
 						<button id="clearDarkThemeBg" class="icon-btn" title="Clear URL">🗑️</button>
 					</div>
 				</div>
